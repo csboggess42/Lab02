@@ -6,17 +6,24 @@
 #include <fstream>
 using namespace std;
 
-struct ReadFile
+//class that reads the file and tells the program what the songs are
+class ReadFile
 {
-   ifstream input_file;
-   bool _eof;
-   bool closed;
+   private:
+		ifstream input_file;
+		bool _eof;
+		bool closed;
+	public:
+		
+		ReadFile(const char* file_name);
+		~ReadFile();
+		String* readLine();
+		
+		//end of file 
+		bool eof();
+		
+		//closing the file 
+		void close();
 };
-
-ReadFile* createReadFile(const char* file_name);
-void destroyReadFile(ReadFile* rf);
-String* readLine(ReadFile* rf);
-bool eof(ReadFile* rf);
-void close(ReadFile* rf);
 
 #endif

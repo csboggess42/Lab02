@@ -4,7 +4,6 @@
 
 ReadFile::ReadFile(const char* file_name)
 {
-   ReadFile* rf = new ReadFile;
 
    input_file.open(file_name);
    closed = false;
